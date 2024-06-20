@@ -1,5 +1,5 @@
 # rpc
-A simple rpc infra  with implementation for http. Purpose is to make it portable to multiple transports  and demonstrate Implementation through OOPS (in python)
+A  rpc infra  with implementation for http. Purpose is to make it portable to multiple transports  and demonstrate Implementation through OOPS (in python)
 
 Start the server first  execute the command
 1> python server_main.py.
