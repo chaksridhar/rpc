@@ -3,6 +3,8 @@ from abc import ABC
 from common import log
 from common import Packers
 
+from typing import Type
+
 
 class IRpcClientTransport(ABC):
     def __init__(self, *args, **kwargs):
@@ -13,8 +15,8 @@ class IRpcClientTransport(ABC):
 
 
 class RpcClient():
-    def __init__(self, rpc_client_xport: IRpcClientTransport):
-        self.rpc_client_xport: IRpcClientTransport = rpc_client_xport
+    def __init__(self, i_rpc_xport_class: Type[IRpcClientTransport], *args, **kwargs):
+        self.rpc_client_xport: IRpcClientTransport = i_rpc_xport_class(*args, **kwargs)
 
     def call(self, fxn_name: str, *args) -> RpcReturnDesc:
         packer_byte = Packers.PackerByte()

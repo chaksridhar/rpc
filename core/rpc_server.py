@@ -24,9 +24,5 @@ class RpcServer():
         return return_value_in_bytes
 
 
-class IRpcServerTransport():
-    def __init__(self, *args, **kwargs):
-        pass
 
-    def start_serving(self):
-        pass
+

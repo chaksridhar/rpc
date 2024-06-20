@@ -1,10 +1,10 @@
 from transport import dream_http_rpc_server
 from core import rpc_server
 import user_app
-from transport import dream_http_rpc_server
 import functools
 from http.server import HTTPServer
-from sys import *
+
+from transport import dream_http_rpc_server
 
 if __name__ == '__main__':
     # def run(server_class=HTTPServer, handler_class=SimpleRequestHandler, port=8000):
@@ -28,7 +28,4 @@ if __name__ == '__main__':
         server.serve_forever()
 
 
-    if len(argv) == 2:
-        run(port=int(argv[1]))
-    else:
-        run()
+    run()
