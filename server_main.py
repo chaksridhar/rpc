@@ -1,22 +1,28 @@
-from http.server import HTTPServer
-from transport.bad_dream_http_server import *
-from transport.dream_http_rpc_server import *
-import logging
+from transport import dream_http_rpc_server
+from core import rpc_server
+import user_app
+from transport import dream_http_rpc_server
 import functools
-
-from sys import argv
-from user_app import *
+from http.server import HTTPServer
+from sys import *
 
 if __name__ == '__main__':
     # def run(server_class=HTTPServer, handler_class=SimpleRequestHandler, port=8000):
     def run(port=8000):
+        '''
+        server_address = ('', port)
+        httpd = server_class(server_address, handler_class)
 
-        rpc_port_name="RPC0"
-        print(f"Debug: Initializing the DreamRpcServer at port:{rpc_port_name}")
-        rpc_server_http = DreamRpcHttpServer("RPC0")
+        httpd.serve_forever()
+        rpc_server_http: RpcServer = RpcServerHttp( httpd.RequestHandlerClass, "json")
         rpc_server_http.register_rpc_fxn("add", add)
-        rpc_server_http.register_rpc_fxn("greetings", greetings)
-        handler = functools.partial(BadDreamHttpHandler, [rpc_server_http])
+        '''
+
+        print("staring the server")
+        rpc_server_obj = rpc_server.RpcServer()
+        rpc_server_obj.register_rpc_fxn("add", user_app.add)
+        rpc_server_obj.register_rpc_fxn("greetings", user_app.greetings)
+        handler = functools.partial(dream_http_rpc_server.BadDreamHttpRpcServerTransport, rpc_server_obj)
         server = HTTPServer(('', port), handler)
 
         server.serve_forever()
