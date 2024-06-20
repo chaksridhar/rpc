@@ -1,6 +1,7 @@
 from common.Packers import *
 from common import log
 from typing import Callable
+from typing import Type
 
 
 class RpcServer():
@@ -24,5 +25,5 @@ class RpcServer():
         return return_value_in_bytes
 
 
-
-
+def callback_handler(rpc_server_obj: Type[RpcServer], packet: bytes) -> bytes:
+    return rpc_server_obj.execute_payload(packet)

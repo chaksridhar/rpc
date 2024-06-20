@@ -2,14 +2,18 @@ from core import rpc_server
 from http.server import BaseHTTPRequestHandler
 import functools
 from common import log
+from typing import Callable
+
+PacketHandlerCallback = Callable[[any, bytes], bytes]
 
 
 class BadDreamHttpRpcServerTransport(BaseHTTPRequestHandler):
 
-    def __init__(self, rpc_server_obj: rpc_server.RpcServer, *args, **kwargs):
+    def __init__(self, call_back_fxn: PacketHandlerCallback, fxn_cookie: any, *args, **kwargs):
         print("calling BadDreamHttpRpcServerTransport")
-        self.partial_handle = functools.partial(BadDreamHttpRpcServerTransport, rpc_server_obj)
-        self.rpc_server_obj = rpc_server_obj
+        # self.partial_handle = functools.partial(BadDreamHttpRpcServerTransport, rpc_server_obj)
+        self.call_back_fxn = call_back_fxn
+        self.call_back_fxn_cookie = fxn_cookie
         print(kwargs)
         super().__init__(*args, **kwargs)
 
@@ -18,7 +22,7 @@ class BadDreamHttpRpcServerTransport(BaseHTTPRequestHandler):
         length = int(self.headers.get('content-length'))
         payload: bytes = self.rfile.read(length)
         print(f"payload = {payload}")
-        return_value = self.rpc_server_obj.execute_payload(payload)
+        return_value = self.call_back_fxn(self.call_back_fxn_cookie, payload)
 
         self.send_response(200)
         self.send_header('Content-type', 'application/text')

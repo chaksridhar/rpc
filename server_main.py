@@ -22,7 +22,7 @@ if __name__ == '__main__':
         rpc_server_obj = rpc_server.RpcServer()
         rpc_server_obj.register_rpc_fxn("add", user_app.add)
         rpc_server_obj.register_rpc_fxn("greetings", user_app.greetings)
-        handler = functools.partial(dream_http_rpc_server.BadDreamHttpRpcServerTransport, rpc_server_obj)
+        handler = functools.partial(dream_http_rpc_server.BadDreamHttpRpcServerTransport, rpc_server.callback_handler,rpc_server_obj)
         server = HTTPServer(('', port), handler)
 
         server.serve_forever()
