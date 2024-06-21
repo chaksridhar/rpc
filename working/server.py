@@ -1,10 +1,12 @@
-
-import user_app
+from http_server import *
+from http_rpc_app_server import *
 import functools
-from http.server import HTTPServer
-from dream_rpc import  dream_rpc_server
-from adapter.http.bad_dream_adapter import dream_rpc_adapter
-from transport.http import bad_dream_http_rpc_server
+from sys import *
+
+
+def add(num_1: int, num_2: int) -> int:
+    print("Debug: Calling add")
+    return num_1 + num_2
 
 
 if __name__ == '__main__':
@@ -20,13 +22,15 @@ if __name__ == '__main__':
         '''
 
         print("staring the server")
-        rpc_server_obj = dream_rpc_server.RpcServer()
-        rpc_server_obj.register_rpc_fxn("add", user_app.add)
-        rpc_server_obj.register_rpc_fxn("greetings", user_app.greetings)
-        handler = functools.partial(bad_dream_http_rpc_server.HttpServer, dream_rpc_adapter.dream_rpc_server_adapter, rpc_server_obj)
+        rpc_server_http = RpcServerHttp("RPC0")
+        rpc_server_http.register_rpc_fxn("add", add)
+        handler = functools.partial(SimpleRequestHandler, [rpc_server_http])
         server = HTTPServer(('', port), handler)
 
         server.serve_forever()
 
 
-    run()
+    if len(argv) == 2:
+        run(port=int(argv[1]))
+    else:
+        run()
