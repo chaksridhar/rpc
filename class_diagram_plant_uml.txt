@@ -1,0 +1,56 @@
+@startuml
+
+
+abstract class iRpcServer {
+  // abstract methods for RPC  server functionality
+ + register_rpc_fxn(self, fxn_name: str, fxn: Callable):
+  + get_rpc_fxn(self, fxn_name: str) -> Callable:
+  + execute_rpc_fxn(self, fxn_name: str, *args)->any:
+       
+
+}
+
+
+abstract class iRpcClient {
+  // abstract methods for RPC client functionality
+   +__init__(IRpcClientTransportAdapter], *args, **kwargs):
+   +  dispatch_payload(self, fxn_name: str, *args) -> RpcReturnDesc:
+   
+
+}
+
+
+class DreamRpcServer implements iRpcServer {
+  // implementation of server functionality
+}
+
+abstract class iTransportClientAdaptor {
+  // Bridges between RPC  Client and the uderlying transport protocol
+   + execute_fxn_payload(*args, **kwargs) -> common_defs.RpcReturnDesc:
+}
+class DreamRpcClientToHttpClientAdatpor implements  iTransportClientAdaptor {
+// This bridges DreamRpc to Http 
+
+}
+class DreamRpcClient implements iRpcClient {
+  // implementation of RPC client functionality
+  + dreamClientToBadDreamHttpClient: iTransportClientAdaptor
+}
+
+
+DreamRpcClientToHttpClientAdatpor <|-- DreamRpcClient: contains
+abstract class iTransportServerAdaptor {
+   // Bridges between RPC  Server and the uderlying transport protocol
+  def execute_fxn_payload(self, *args, **kwargs) -> any:
+}
+
+class BadDreamHttpToDreamRpcServerAdatpor implements  iTransportServerAdaptor {
+}
+class BadDreamHttpServer {
+}
+
+BadDreamHttpToDreamRpcServerAdatpor  <|-- BadDreamHttpServer: contains
+DreamRpcServer  <|-- BadDreamHttpToDreamRpcServerAdatpor:contains
+
+
+@enduml
