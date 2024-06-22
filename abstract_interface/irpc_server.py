@@ -1,7 +1,5 @@
-from common.Packers import *
-from common import log
+
 from typing import Callable
-from typing import Type
 from abc import ABC
 
 
@@ -15,7 +13,7 @@ class IRpcServer(ABC):
     def get_rpc_fxn(self, fxn_name: str) -> Callable:
         pass
 
-    def execute_rpc_fxn(self, func_obj_in_bytes: bytes) -> bytes:
+    def execute_rpc_fxn(self, fxn_name: str, *args)->any:
         pass
 
 

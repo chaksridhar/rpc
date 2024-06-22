@@ -17,14 +17,16 @@ class  RpcServer(irpc_server.IRpcServer):
     def get_rpc_fxn(self, fxn_name: str) -> Callable:
         return self.rpc_name_fxn_map[fxn_name]
 
-    def execute_rpc_fxn(self, func_obj_in_bytes: bytes) -> bytes:
-        [fxn_name, fxn_args] = PackerByte().unmarshall_func_object(func_obj_in_bytes)
-        fxn = self.get_rpc_fxn(fxn_name)
-        result = fxn(*fxn_args)
+    def execute_rpc_fxn(self, fxn_name:str, fxn_args:list ) -> RpcReturnDesc:
         return_desc: RpcReturnDesc = RpcReturnDesc()
-        return_desc.result = result
-        return_value_in_bytes = PackerByte().marshall_return_value(return_desc)
-        return return_value_in_bytes
+        try:
+            fxn = self.get_rpc_fxn(fxn_name)
+            result = fxn(*fxn_args)
+            return_desc.result = result
+        except Exception as e:
+            return_desc.status=False
+            return_desc.error_msg = e.__str__()
+        return return_desc
 
 
 

@@ -1,27 +1,21 @@
-
 from http.server import BaseHTTPRequestHandler
 from common import log
-from typing import Callable
-
-PacketHandlerCallback = Callable[[any, bytes], bytes]
+from abstract_interface import irpc_xport_adapter
+from typing import Type
 
 
 class HttpServer(BaseHTTPRequestHandler):
 
-    def __init__(self, packet_handler: PacketHandlerCallback, packet_handler_cookie: any, *args, **kwargs):
-        print("calling BadDreamHttpRpcServerTransport")
+    def __init__(self, rpc_xport_adapter_obj: Type[irpc_xport_adapter.IRpcServerTransportAdapter], *args, **kwargs):
         # self.partial_handle = functools.partial(BadDreamHttpRpcServerTransport, rpc_server_obj)
-        self.packet_handler = packet_handler
-        self.packet_handler_cookie = packet_handler_cookie
-        print(kwargs)
+        self.rpc_xport_adapter: Type[irpc_xport_adapter.IRpcServerTransportAdapter] = rpc_xport_adapter_obj
         super().__init__(*args, **kwargs)
 
     def do_POST(self):
         log.simple_log("Entering doPost")
         length = int(self.headers.get('content-length'))
         packet: bytes = self.rfile.read(length)
-        return_value = self.packet_handler(self.packet_handler_cookie, packet)
-
+        return_value = self.rpc_xport_adapter.execute_fxn_payload(packet)
         self.send_response(200)
         self.send_header('Content-type', 'application/text')
         self.end_headers()
