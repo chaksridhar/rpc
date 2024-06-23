@@ -10,3 +10,6 @@ if __name__ == "__main__":
     print(f"Response of add ({val_1}, {val_2})=  {response.result}")
     response = rpc_client_object.dispatch_payload("greetings")
     print(f"Response of   greetings()=  {response.result}")
+
+    response = rpc_client_object.dispatch_payload("max_array", [1,3, 5, 7])
+    print(f"Response of   max_array()=  {response.result}")

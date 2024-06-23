@@ -11,7 +11,6 @@ class DreamRpcClient(irpc_client.IRpcClient):
         super().__init__(i_rpc_xport_class_adapter, *args, **kwargs)
 
     def dispatch_payload(self, fxn_name: str, *args) -> common_defs.RpcReturnDesc:
-        packer_byte = Packers.PackerByte()
         arg_list = []
         for arg in args:
             arg_list.append(arg)
