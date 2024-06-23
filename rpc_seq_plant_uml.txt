@@ -1,0 +1,23 @@
+@startuml
+ApplicationClient -> IRpcClient :  dispatch_payload(fxn_name, fxn_args)
+IRpcClient -> iTransportClientAdaptor:  execute_fxn_payload(fxn_name , fxn_args)
+iTransportClientAdaptor -> iTransportClientAdaptor: fxn_obj_marsh=marshall(fxn_name, fxn_args)
+iTransportClientAdaptor -> TransportClient: send(fxn_obj_marsh)
+TransportClient -> TransportServer: fxn_obj_marsh
+
+
+TransportServer -> iTransportRpcServerAdaptor :   fxn_obj_marsh
+iTransportRpcServerAdaptor -> iTransportRpcServerAdaptor : [fxn_name,fxn_args]=unmarshall(fxn_obj_marsh)
+iTransportRpcServerAdaptor -> iRPCServer :execute_rpc_fxn(fxn_name,fxn_args]
+iRPCServer -> iRPCServer: fxn=get_rpc_fxn(fxn_name)
+iRPCServer -> ApplicationServer: retval=fxn(fxn_args)
+ApplicationServer ->iRPCServer: retval
+iRPCServer -> iTransportRpcServerAdaptor: retval
+iTransportRpcServerAdaptor -> iTransportRpcServerAdaptor: retval_xport_xport=marshall(retval)
+iTransportRpcServerAdaptor  ->  TransportServer: ret_val_xport
+
+TransportClient -> iTransportClientAdaptor : ret_val_native
+iTransportClientAdaptor -> iTransportClientAdaptor : ret_val=unmarshall(ret_val_native)
+iTransportClientAdaptor  -> IRpcClient: ret_val
+IRpcClient -> ApplicationClient: ret_val
+@enduml

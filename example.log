@@ -1,0 +1,112 @@
+DEBUG:root:('Debug: Registered rpc_fxn add',)
+DEBUG:root:('Debug: Registered rpc_fxn greetings',)
+DEBUG:root:('Debug:Initialized  client with http://localhost:8000 ',)
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8000
+DEBUG:root:('Entering doPost',)
+DEBUG:urllib3.connectionpool:http://localhost:8000 "POST / HTTP/10" 200 None
+DEBUG:root:(RpcReturnDesc(result=3, status=3, error_msg=''),)
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8000
+DEBUG:root:('Entering doPost',)
+DEBUG:urllib3.connectionpool:http://localhost:8000 "POST / HTTP/10" 200 None
+DEBUG:root:(RpcReturnDesc(result='Greetings!', status='Greetings!', error_msg=''),)
+DEBUG:root:('Debug: Registered rpc_fxn add',)
+DEBUG:root:('Debug: Registered rpc_fxn greetings',)
+DEBUG:root:('Debug: Registered rpc_fxn max_array',)
+DEBUG:root:('Debug:Initialized  client with http://localhost:8000 ',)
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8000
+DEBUG:root:('Entering doPost',)
+DEBUG:urllib3.connectionpool:http://localhost:8000 "POST / HTTP/10" 200 None
+DEBUG:root:(RpcReturnDesc(result=3, status=3, error_msg=''),)
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8000
+DEBUG:root:('Entering doPost',)
+DEBUG:urllib3.connectionpool:http://localhost:8000 "POST / HTTP/10" 200 None
+DEBUG:root:(RpcReturnDesc(result='Greetings!', status='Greetings!', error_msg=''),)
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8000
+DEBUG:root:('Entering doPost',)
+DEBUG:root:('Debug:Initialized  client with http://localhost:8000 ',)
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8000
+DEBUG:root:('Entering doPost',)
+DEBUG:urllib3.connectionpool:http://localhost:8000 "POST / HTTP/10" 200 None
+DEBUG:root:(RpcReturnDesc(result=3, status=3, error_msg=''),)
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8000
+DEBUG:root:('Entering doPost',)
+DEBUG:urllib3.connectionpool:http://localhost:8000 "POST / HTTP/10" 200 None
+DEBUG:root:(RpcReturnDesc(result='Greetings!', status='Greetings!', error_msg=''),)
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8000
+DEBUG:root:('Entering doPost',)
+DEBUG:root:('Debug:Initialized  client with http://localhost:8000 ',)
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8000
+DEBUG:root:('Entering doPost',)
+DEBUG:urllib3.connectionpool:http://localhost:8000 "POST / HTTP/10" 200 None
+DEBUG:root:(RpcReturnDesc(result=3, status=3, error_msg=''),)
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8000
+DEBUG:root:('Entering doPost',)
+DEBUG:urllib3.connectionpool:http://localhost:8000 "POST / HTTP/10" 200 None
+DEBUG:root:(RpcReturnDesc(result='Greetings!', status='Greetings!', error_msg=''),)
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8000
+DEBUG:root:('Entering doPost',)
+DEBUG:root:('Debug:Initialized  client with http://localhost:8000 ',)
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8000
+DEBUG:root:('Entering doPost',)
+DEBUG:urllib3.connectionpool:http://localhost:8000 "POST / HTTP/10" 200 None
+DEBUG:root:(RpcReturnDesc(result=3, status=3, error_msg=''),)
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8000
+DEBUG:root:('Entering doPost',)
+DEBUG:urllib3.connectionpool:http://localhost:8000 "POST / HTTP/10" 200 None
+DEBUG:root:(RpcReturnDesc(result='Greetings!', status='Greetings!', error_msg=''),)
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8000
+DEBUG:root:('Entering doPost',)
+DEBUG:root:('Debug:Initialized  client with http://localhost:8000 ',)
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8000
+DEBUG:root:('Entering doPost',)
+DEBUG:urllib3.connectionpool:http://localhost:8000 "POST / HTTP/10" 200 None
+DEBUG:root:(RpcReturnDesc(result=3, status=3, error_msg=''),)
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8000
+DEBUG:root:('Entering doPost',)
+DEBUG:urllib3.connectionpool:http://localhost:8000 "POST / HTTP/10" 200 None
+DEBUG:root:(RpcReturnDesc(result='Greetings!', status='Greetings!', error_msg=''),)
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8000
+DEBUG:root:('Entering doPost',)
+DEBUG:root:('Debug:Initialized  client with http://localhost:8000 ',)
+DEBUG:root:('Debug:Initialized  client with http://localhost:8000 ',)
+DEBUG:root:('Debug:Initialized  client with http://localhost:8000 ',)
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8000
+DEBUG:root:('Entering doPost',)
+DEBUG:urllib3.connectionpool:http://localhost:8000 "POST / HTTP/10" 200 None
+DEBUG:root:(RpcReturnDesc(result=3, status=3, error_msg=''),)
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8000
+DEBUG:root:('Entering doPost',)
+DEBUG:urllib3.connectionpool:http://localhost:8000 "POST / HTTP/10" 200 None
+DEBUG:root:(RpcReturnDesc(result='Greetings!', status='Greetings!', error_msg=''),)
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8000
+DEBUG:root:('Entering doPost',)
+DEBUG:root:('Debug: Registered rpc_fxn add',)
+DEBUG:root:('Debug: Registered rpc_fxn greetings',)
+DEBUG:root:('Debug: Registered rpc_fxn max_array',)
+DEBUG:root:('Debug:Initialized  client with http://localhost:8000 ',)
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8000
+DEBUG:root:('Entering doPost',)
+DEBUG:urllib3.connectionpool:http://localhost:8000 "POST / HTTP/10" 200 None
+DEBUG:root:(RpcReturnDesc(result=3, status=3, error_msg=''),)
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8000
+DEBUG:root:('Entering doPost',)
+DEBUG:urllib3.connectionpool:http://localhost:8000 "POST / HTTP/10" 200 None
+DEBUG:root:(RpcReturnDesc(result='Greetings!', status='Greetings!', error_msg=''),)
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8000
+DEBUG:root:('Entering doPost',)
+DEBUG:root:('Debug: Registered rpc_fxn add',)
+DEBUG:root:('Debug: Registered rpc_fxn greetings',)
+DEBUG:root:('Debug: Registered rpc_fxn max_array',)
+DEBUG:root:('Debug:Initialized  client with http://localhost:8000 ',)
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8000
+DEBUG:root:('Entering doPost',)
+DEBUG:urllib3.connectionpool:http://localhost:8000 "POST / HTTP/10" 200 None
+DEBUG:root:(RpcReturnDesc(result=3, status=3, error_msg=''),)
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8000
+DEBUG:root:('Entering doPost',)
+DEBUG:urllib3.connectionpool:http://localhost:8000 "POST / HTTP/10" 200 None
+DEBUG:root:(RpcReturnDesc(result='Greetings!', status='Greetings!', error_msg=''),)
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:8000
+DEBUG:root:('Entering doPost',)
+DEBUG:urllib3.connectionpool:http://localhost:8000 "POST / HTTP/10" 200 None
+DEBUG:root:(RpcReturnDesc(result=7, status=7, error_msg=''),)
